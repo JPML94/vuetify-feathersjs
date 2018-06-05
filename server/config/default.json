@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 500,
+    "max": 1000
+  },
+  "authentication": {
+    "secret": "6c2f982965ddbdc0c824045ad2f1bd1ac46022cc67401397909c16a296f6a3860bf0811406bd5398e763c380baf6f70970dffc45020fb9312f227e1d5ca109ade884dee05b69f685858b803605d061f97a9c8dfef84e2d3bcb4cc86fb4a3e3acf623f4f1e49fa7c90fd789840e1db55b7a365bdb38496ceb9f09384f05dd98a2383858a5d6ece9a3789c2d04207173128470dc7242c992f6d1312616dcbd63d0b34dad995540a1b061e3a06fbf9c5ae426c5f03188ed0c3a8bb19ea568d910363346fc94ad045c2ea741554039e87885be8b8723ce82eccee7f289b42d0cff4186d4045693bb1a992d0465390c2f7782b8b300f3202180852895278ef2bfc261",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://board.coding.garden",
+      "subject": "auth",
+      "issuer": "coding.garden",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "username",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/trello_clone_server"
+}
