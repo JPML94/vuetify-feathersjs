@@ -1,4 +1,4 @@
-# trello-clone-server
+# feathersjs-server
 
 > 
 
