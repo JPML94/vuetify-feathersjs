@@ -18,7 +18,7 @@
       "header": {
         "typ": "access"
       },
-      "audience": "https://board.coding.garden",
+      "audience": "https://board.jpml.com",
       "subject": "auth",
       "issuer": "coding.garden",
       "algorithm": "HS256",
@@ -30,5 +30,5 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb://localhost:27017/trello_clone_server"
+  "mongodb": "mongodb://localhost:27017/boards_server"
 }
