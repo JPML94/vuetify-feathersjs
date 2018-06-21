@@ -33,12 +33,6 @@
             type="password"
             required
           ></v-text-field>
-          <v-text-field
-            v-model="user.imageUrl"
-            :rules="notEmptyRules"
-            label="Image URL"
-            required
-          ></v-text-field>
           <v-btn type="submit" :disabled="!valid">SignUp</v-btn>
         </v-form>
         <v-progress-circular
@@ -58,14 +52,13 @@ import { mapState } from 'vuex';
 
 export default {
   name: 'signup',
-  data: (vm) => ({
+  data: vm => ({
     valid: false,
     user: {
       username: '',
       password: '',
       confirmPassword: '',
       displayName: '',
-      imageUrl: '',
     },
     notEmptyRules: [value => !!value || 'Cannot be empty'],
     confirmPasswordRules: [confirmPassword => confirmPassword === vm.user.password || 'Password must match.'],

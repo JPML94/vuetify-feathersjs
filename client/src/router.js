@@ -4,7 +4,7 @@ import Home from './views/Home.vue';
 import SignUp from './views/SignUp.vue';
 import Login from './views/Login.vue';
 import Boards from './views/Boards.vue';
-
+import TwoByDo from './views/TwoByDo.vue';
 import store from './store';
 
 Vue.use(Router);
@@ -15,9 +15,14 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
+    },
+    {
+      path: '/twobydo',
+      name: 'twobydo',
+      component: TwoByDo,
       beforeEnter(to, from, next) {
         store.dispatch('auth/authenticate').then(() => {
-          next('/boards');
+          next();
         }).catch(() => {
           next('/login');
         });

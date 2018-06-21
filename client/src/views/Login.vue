@@ -39,13 +39,13 @@ import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'login',
-  data: (vm) => ({
+  data: vm => ({
     valid: false,
     user: {
       username: '',
       password: '',
     },
-    notEmptyRules: [(value) => !!value || 'Cannot be empty'],
+    notEmptyRules: [value => !!value || 'Cannot be empty'],
   }),
   computed: {
     ...mapState('auth', { loading: 'isAuthenticatePending' }),
@@ -59,7 +59,7 @@ export default {
           ...this.user,
         }).then(() => {
           this.$router.push('/boards');
-        }).catch(e => {
+        }).catch((e) => {
           console.log('Authentication error', e);
         });
       }

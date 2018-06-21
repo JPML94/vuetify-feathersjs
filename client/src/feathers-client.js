@@ -8,7 +8,9 @@ const socket = io('http://localhost:3030', {
 });
 
 const feathersClient = feathers()
-  .configure(socketio(socket))
+  .configure(socketio(socket, {
+    timeout: 2000,
+  }))
   .configure(auth({
     storage: window.localStorage,
   }));

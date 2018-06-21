@@ -21,13 +21,17 @@ export default new Vuex.Store({
         username: '',
         password: '',
         displayName: '',
-        imageUrl: '',
       },
     }),
-    service('boards', {
+    service('contacts', {
       instanceDefaults: {
-        name: '',
-        background: '',
+        email: '',
+      },
+    }),
+    service('notes', {
+      instanceDefaults: {
+        title: '',
+        body: '',
       },
     }),
     auth({
